@@ -1,2 +1,2 @@
 # GithubCLITool
-Python script that uses the Github API tools
+Java program that uses the Github API tools
