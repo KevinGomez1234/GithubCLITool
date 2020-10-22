@@ -18,7 +18,7 @@ def view_all_repos(token):
 	array_of_objects = json.loads(r.text)
 	#since repos returns an array of objects iterate through all objects and find the one that matches key = name
 	for obj in array_of_objects:
-		print(obj['full_name'])
+		print("https://github.com/" + obj['full_name'])
 if len(sys.argv) == 1:
 	print("Usage: gapp [create] <auth_token> <new_repo_name> <private-repo: boolean(true or false)> <username>")
 	print("Usage: gapp [view] <auth_token>")
