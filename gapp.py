@@ -13,10 +13,8 @@ def create_repo(token, new_repo_name, private_repo, username):
 		print("succesful resource created " + username + "/" + new_repo_name)
 def view_all_repos(token):
 	endpoint = "https://api.github.com/user/repos"
-	payload = {"access_token": token}
-	r = requests.get(endpoint, params = payload)
+	r = requests.get(endpoint, headers={'Authorization': 'Bearer ' + token})
 	array_of_objects = json.loads(r.text)
-	#since repos returns an array of objects iterate through all objects and find the one that matches key = name
 	for obj in array_of_objects:
 		print("https://github.com/" + obj['full_name'])
 if len(sys.argv) == 1:
